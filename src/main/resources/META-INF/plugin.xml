@@ -25,4 +25,9 @@
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
     </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <statusBarWidgetFactory implementation="com.github.laihaojie.ideaplugin.statusbar.JieStatusBarFactory"/>
+    </extensions>
+
 </idea-plugin>

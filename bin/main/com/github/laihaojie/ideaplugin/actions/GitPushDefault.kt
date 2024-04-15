@@ -1,9 +1,11 @@
 package com.github.laihaojie.ideaplugin.actions
 
+import TimeWidget
 import com.github.laihaojie.ideaplugin.utils.checkStatus
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.ui.Messages
+import com.intellij.openapi.wm.WindowManager
 import java.io.File
 
 
@@ -15,7 +17,19 @@ class GitPushDefaultAction : AnAction() {
         val basePath = File(project?.basePath)
 
 
-      val res =  checkStatus(basePath)
+        val res =  checkStatus(basePath)
+
+
+        val statusBar = project?.let { WindowManager.getInstance().getStatusBar(it) }
+
+
+
+        // 获取你的 Widget
+        val widget = statusBar?.getWidget("custom.TimeWidget") as? TimeWidget
+
+        widget?.updateText("xxxxxxxxxxxxxxxxxx")
+
+        widget?.let { statusBar.updateWidget(it.ID()) }
 
 
 
