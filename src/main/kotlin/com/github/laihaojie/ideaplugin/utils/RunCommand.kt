@@ -2,13 +2,13 @@ package com.github.laihaojie.ideaplugin.utils
 
 import java.io.File
 
-fun runCmd(cmd: String?, rootPath: File?): String {
+fun runCmd(cmd: List<String>?, rootPath: File?): String {
     if (cmd.isNullOrEmpty()) {
-        throw IllegalArgumentException("Command must not be null or empty")
+        throw IllegalArgumentException("命令不能为空")
     }
 
     try {
-        val process = ProcessBuilder(*cmd.split(" ").toTypedArray())
+        val process = ProcessBuilder(cmd)
                 .directory(rootPath)
                 .redirectOutput(ProcessBuilder.Redirect.PIPE) // Redirect the output to a pipe
                 .redirectError(ProcessBuilder.Redirect.PIPE)  // Redirect the errors to a pipe
@@ -22,11 +22,11 @@ fun runCmd(cmd: String?, rootPath: File?): String {
         val errors = process.errorStream.bufferedReader().use { it.readText() }
 
         if (process.exitValue() != 0) {
-            throw RuntimeException("Command execution failed with errors: $errors")
+            throw RuntimeException("命令执行出错: $errors")
         }
 
         return output.trim()
     } catch (e: Exception) {
-        throw RuntimeException("Failed to execute command: ${e.message}", e)
+        throw RuntimeException("执行命令失败: ${e.message}", e)
     }
 }

@@ -1,19 +1,16 @@
-import com.intellij.icons.AllIcons
+import com.github.laihaojie.ideaplugin.JieBundle
 import com.intellij.openapi.wm.StatusBar
 import com.intellij.openapi.wm.StatusBarWidget
-import com.intellij.openapi.wm.StatusBarWidgetFactory
 import com.intellij.util.Consumer
 import java.awt.Component
 import java.awt.event.MouseEvent
-import java.text.SimpleDateFormat
-import java.util.*
 import javax.swing.Icon
 
 class TimeWidget : StatusBarWidget, StatusBarWidget.TextPresentation {
 
     private var currentText = "Jie"
 
-    override fun ID(): String = "custom.TimeWidget"
+    override fun ID(): String = JieBundle.message("statusBarId")
 
     override fun getPresentation(): StatusBarWidget.WidgetPresentation {
         return this
@@ -37,7 +34,7 @@ class TimeWidget : StatusBarWidget, StatusBarWidget.TextPresentation {
 
     fun getIcon(): Icon? = null
 
-    fun updateText(text:String){
+    fun updateText(text: String) {
         currentText = text
     }
 }
