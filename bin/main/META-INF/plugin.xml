@@ -10,6 +10,13 @@
 
 
     <actions>
+        <action id="JiePlugin.GitOpenRepo"
+                class="com.github.laihaojie.ideaplugin.actions.GitOpenRepoAction"
+                text="Jie: 打开项目仓库"
+                description="打开项目关联的远程仓库"
+        >
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
         <action id="JiePlugin.GitPushCustomAction"
                 class="com.github.laihaojie.ideaplugin.actions.GitPushCustomAction"
                 text="Jie Push: custom message"
