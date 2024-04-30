@@ -2,7 +2,9 @@
 <idea-plugin>
     <id>com.github.laihaojie.ideaplugin</id>
     <name>Jie</name>
-    <vendor>laihaojie</vendor>
+    <vendor email="17608421492@163.com" url="https://github.com/laihaojie/idea-plugin">laihaojie</vendor>
+
+    <description>该插件是一个一键提交代码到远程仓库的工具插件</description>
 
     <depends>com.intellij.modules.platform</depends>
 
