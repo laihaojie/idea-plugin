@@ -3,11 +3,19 @@
     <id>com.github.laihaojie.ideaplugin</id>
     <name>Jie</name>
     <vendor email="17608421492@163.com" url="https://github.com/laihaojie/idea-plugin">laihaojie</vendor>
-    <description>
-        <![CDATA[
-        该插件是一个一键提交代码到远程仓库的工具插件
-        ]]>
-    </description>
+    <!--    <description>-->
+    <!--        <![CDATA[-->
+    <!--        该插件是一个一键提交代码到远程仓库的工具插件-->
+    <!--        ]]>-->
+    <!--    </description>-->
+
+    <description><![CDATA[
+该插件是一个一键提交代码到远程仓库的工具插件
+<ul>
+  <li>提交代码</li>
+  <li>打开代码远程仓库</li>
+</ul>
+]]></description>
     <depends>com.intellij.modules.platform</depends>
     <resource-bundle>messages.JieBundle</resource-bundle>
     <actions>
