@@ -3,14 +3,13 @@
     <id>com.github.laihaojie.ideaplugin</id>
     <name>Jie</name>
     <vendor email="17608421492@163.com" url="https://github.com/laihaojie/idea-plugin">laihaojie</vendor>
-
-    <description>该插件是一个一键提交代码到远程仓库的工具插件</description>
-
+    <description>
+        <![CDATA[
+        该插件是一个一键提交代码到远程仓库的工具插件
+        ]]>
+    </description>
     <depends>com.intellij.modules.platform</depends>
-
     <resource-bundle>messages.JieBundle</resource-bundle>
-
-
     <actions>
         <action id="JiePlugin.GitOpenRepo"
                 class="com.github.laihaojie.ideaplugin.actions.GitOpenRepoAction"
@@ -34,10 +33,8 @@
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
     </actions>
-
     <extensions defaultExtensionNs="com.intellij">
         <statusBarWidgetFactory id="custom.TimeWidgetFactory"
                                 implementation="com.github.laihaojie.ideaplugin.statusbar.JieStatusBarFactory"/>
     </extensions>
-
 </idea-plugin>
